@@ -1,3 +1,5 @@
+#!-*-coding:utf-8 -*-
+
 import hmac
 import hashlib
 import requests
@@ -12,8 +14,8 @@ class Fcoin():
         self.base_url = base_url
 
     def auth(self, key, secret):
-        self.key = bytes(key,'utf-8')
-        self.secret = bytes(secret, 'utf-8')
+        self.key = bytes(key)
+        self.secret = bytes(secret)
 
 
     def public_request(self, method, api_url, **payload):
@@ -54,7 +56,7 @@ class Fcoin():
         elif method == 'POST':
             sig_str = method + full_url + timestamp + param
 
-        signature = self.get_signed(bytes(sig_str, 'utf-8'))
+        signature = self.get_signed(bytes(sig_str))
 
         headers = {
             'FC-ACCESS-KEY': self.key,

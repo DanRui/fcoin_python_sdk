@@ -4,7 +4,7 @@
 #@Author  : linfeng
 import math
 import time
-import numpy as np
+# import numpy as np
 from fcoin3 import Fcoin
 from collections import defaultdict
 import config
